@@ -120,7 +120,7 @@ GOLDEN RULE: Auto-router first → 6-step checklist → manual spreadsheet → X
 TERRITORY & MARKET ROUTING
 
 CHINA: Commercial → Kevin/Katie work it. GE or Enterprise → Angie Ching.
-JAPAN: All leads → write to Yusuke Miyatake with prospect details. Kevin/Katie do not work these.
+JAPAN: All leads → write to Yusuke Miyatake with prospect details. Kevin/Katie do not work these. Yusuke is the RevOps partner for Japan and will guide where the lead needs to go — he determines the correct routing once notified.
 KOREA: All leads → assign to Jongsong Kim.
 
 IN SCOPE: Vietnam, SEA (excl. Korea), ANZ, HK, Taiwan, Afghanistan (commercial), China (commercial).
@@ -133,7 +133,7 @@ AE REFERENCE
 COMMERCIAL: Priya Thatikonda, Raymona O'Connell, Joshua George, Daire Hunt, Maura, Harry Hutchison, Patrick Roberts, Ryan, Jia Ling Eng, Rinnea Lam, Isabel McLaughlin
 GROWTH ENTERPRISE: Leanna Duke, Thomas Anschuetz, Hudson Parker
 CHINA (GE/Enterprise): Angie Ching
-KOREA: Jongsong Kim | JAPAN: Yusuke Miyatake (partner)
+KOREA: Jongsong Kim | JAPAN: Yusuke Miyatake (RevOps partner — determines routing, do not work the lead yourself)
 Vietnam/Thailand: Tanut Watanachanobol | Singapore/Malaysia/Greater China: Simon Tan
 Indonesia: Rahmat Mulyadi | Philippines: Macy Ann Cruz
 
