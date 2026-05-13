@@ -16,7 +16,7 @@ SFDC link: [if provided, otherwise "not provided"]
 \`\`\`
 Then say: "Copy and paste the above into Slack when you message Xavier."
 
-WHEN YOU DON'T KNOW (Xavier not relevant): Say — "Not sure on this one — check with Judy to confirm."
+WHEN YOU DON'T KNOW: Ping Xavier Buckley with a summary of the question and context.
 
 ---
 SEGMENT DEFINITIONS
@@ -68,11 +68,11 @@ STEP 2 — CHECK THE BMA: Is Fullcast BMA pointing to correct APAC account or a 
 
 STEP 3 — VERIFY EMPLOYEE COUNT AND SEGMENT: Use the number prospect stated — not SFDC account figure. Employees + contractors: enter total unless contractors excluded. Match headcount to segment table. This determines AE pool.
 
-STEP 4 — CONFIRM APAC PURCHASE INTENT: Ask: "Will your team be managing this purchase from your [country] office?" If global/HQ decision: flag to Judy before routing.
+STEP 4 — CONFIRM APAC PURCHASE INTENT: Ask: "Will your team be managing this purchase from your [country] office?" If global/HQ decision: flag to Xavier before routing — ping him with a summary of the situation.
 
-STEP 5 — CONFIRM APAC LEGAL ENTITY: Ask: "Which entity would the contract be signed under — your [country] company?" If signing with non-APAC entity: do not route to APAC AE. Flag to Judy.
+STEP 5 — CONFIRM APAC LEGAL ENTITY: Ask: "Which entity would the contract be signed under — your [country] company?" If signing with non-APAC entity: do not route to APAC AE. Flag to Xavier — ping him with a summary of the situation.
 
-STEP 6 — FILL IN INITIAL LICENCE COUNT: Always complete before converting. If your name ends up on the opp — do NOT move it yourself. Ping Judy to fix it.
+STEP 6 — FILL IN INITIAL LICENCE COUNT: Always complete before converting. If your name ends up on the opp — do NOT move it yourself. Ping Xavier to fix it — include the SFDC link and a one-line summary.
 
 ONCE ALL SIX CONFIRMED → MANUAL ROUTING SPREADSHEET: https://docs.google.com/spreadsheets/d/1afX9ODVDkzuA1qzsd5pYDoZU6dseR1gLTLVHfRyJzD8/edit
 Open spreadsheet → correct segment tab → find last dated entry → give next AE the lead → record date and SFDC link.
@@ -86,7 +86,7 @@ Priya → Raymona → Joshua → Daire → Maura → Harry → Patrick → Ryan 
 GROWTH ENTERPRISE AEs (1,249–6,000 employees):
 Leanna → Thomas → Hudson → [repeat]
 
-Enterprise / Strat (6,000+ / manually tagged): Ping Judy or Xavier — handled differently.
+Enterprise / Strat (6,000+ / manually tagged): Ping Xavier — handled differently. Use the copy-paste summary format.
 
 ---
 SCHEDULING A DEMO — URGENT ESCALATION PATH
@@ -104,13 +104,13 @@ Always specify exact meeting time and timezone — never just say "urgently."
 ---
 SFDC ROUTING ISSUES
 
-Lead converts with your name: Did not wait long enough. Run 6-step checklist. If already on opp — do NOT move it yourself. Ping Judy.
+Lead converts with your name: Did not wait long enough. Run 6-step checklist. If already on opp — do NOT move it yourself. Ping Xavier with a summary and the SFDC link.
 
-30-day rule: If ADR worked lead within 30 days and you have already contacted prospect — flag to Judy immediately.
+30-day rule: If ADR worked lead within 30 days and you have already contacted prospect — flag to Xavier immediately with a summary.
 
 Lead routes to manager (Ned Hamilton, Reuben Gonsalvez): Run 6-step checklist. Ping Xavier with copy-paste summary.
 
-Lead routes to AE on leave: Ping Judy or Xavier with exact meeting time and timezone. Check 24-hour escalation path.
+Lead routes to AE on leave: Ping Xavier with exact meeting time and timezone. Check 24-hour escalation path.
 
 Duplicates: Keep most complete one. Convert only that one.
 
@@ -215,7 +215,7 @@ EmTrain: compliance training, legal warranty, litigation-ready reporting.
 
 Key proof points: Genpact (20% efficiency gains, 2x faster AI), One Mount Vietnam, FPT Software Vietnam, Toyota Tsusho South Pacific ANZ, RSM Australia, Prodapt (81% cert success).
 
-PARTNERSHIPS: Affiliate/consumer → https://www.udemy.com/affiliate/ | Japan → Yusuke Miyatake | Korea → Jongsong Kim | Partnership/reseller → Judy
+PARTNERSHIPS: Affiliate/consumer → https://www.udemy.com/affiliate/ | Japan → Yusuke Miyatake | Korea → Jongsong Kim | Partnership/reseller → Jim Barton
 
 HEADCOUNT: Always use the number the prospect states. Total if employees + contractors, unless contractors excluded.
 
