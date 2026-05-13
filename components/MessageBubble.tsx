@@ -1,44 +1,13 @@
+"use client";
+
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import CodeBlock from "./CodeBlock";
 import type { Message } from "@/types";
 
 type Props = {
   message: Message;
 };
-
-function parseTextWithCodeBlocks(text: string) {
-  const parts: { type: "text" | "code"; content: string; language?: string }[] =
-    [];
-  const codeBlockRegex = /```(\w*)\n?([\s\S]*?)```/g;
-  let lastIndex = 0;
-  let match;
-
-  while ((match = codeBlockRegex.exec(text)) !== null) {
-    if (match.index > lastIndex) {
-      parts.push({ type: "text", content: text.slice(lastIndex, match.index) });
-    }
-    parts.push({
-      type: "code",
-      content: match[2].trimEnd(),
-      language: match[1] || undefined,
-    });
-    lastIndex = match.index + match[0].length;
-  }
-
-  if (lastIndex < text.length) {
-    parts.push({ type: "text", content: text.slice(lastIndex) });
-  }
-
-  return parts;
-}
-
-function renderText(text: string) {
-  return text.split("\n").map((line, i, arr) => (
-    <span key={i}>
-      {line}
-      {i < arr.length - 1 && <br />}
-    </span>
-  ));
-}
 
 export default function MessageBubble({ message }: Props) {
   const isUser = message.role === "user";
@@ -69,8 +38,8 @@ export default function MessageBubble({ message }: Props) {
             </div>
           )}
           {textContent && (
-            <div className="bg-[#5624d0] text-white px-4 py-3 rounded-2xl rounded-tl-sm text-sm leading-relaxed">
-              {renderText(textContent)}
+            <div className="bg-[#5624d0] text-white px-4 py-3 rounded-2xl rounded-tl-sm text-sm leading-relaxed whitespace-pre-wrap">
+              {textContent}
             </div>
           )}
         </div>
@@ -78,18 +47,98 @@ export default function MessageBubble({ message }: Props) {
     );
   }
 
-  const parts = parseTextWithCodeBlocks(textContent);
-
   return (
     <div className="flex justify-start mb-4">
-      <div className="max-w-[85%] bg-white border border-gray-200 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-gray-800 leading-relaxed shadow-sm">
-        {parts.map((part, i) =>
-          part.type === "code" ? (
-            <CodeBlock key={i} code={part.content} language={part.language} />
-          ) : (
-            <span key={i}>{renderText(part.content)}</span>
-          )
-        )}
+      <div className="max-w-[85%] bg-white border border-gray-200 rounded-2xl rounded-tl-sm px-4 py-3 text-sm text-gray-800 shadow-sm">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={{
+            h1: ({ children }) => (
+              <h1 className="text-base font-bold mt-3 mb-1 text-gray-900">{children}</h1>
+            ),
+            h2: ({ children }) => (
+              <h2 className="text-sm font-bold mt-3 mb-1 text-gray-900">{children}</h2>
+            ),
+            h3: ({ children }) => (
+              <h3 className="text-sm font-semibold mt-2 mb-1 text-gray-900">{children}</h3>
+            ),
+            p: ({ children }) => (
+              <p className="mb-2 last:mb-0 leading-relaxed">{children}</p>
+            ),
+            ul: ({ children }) => (
+              <ul className="list-disc list-outside pl-5 mb-2 space-y-1">{children}</ul>
+            ),
+            ol: ({ children }) => (
+              <ol className="list-decimal list-outside pl-5 mb-2 space-y-1">{children}</ol>
+            ),
+            li: ({ children }) => (
+              <li className="leading-relaxed">{children}</li>
+            ),
+            strong: ({ children }) => (
+              <strong className="font-semibold text-gray-900">{children}</strong>
+            ),
+            em: ({ children }) => (
+              <em className="italic">{children}</em>
+            ),
+            a: ({ href, children }) => (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#5624d0] underline hover:text-[#4a1db0]"
+              >
+                {children}
+              </a>
+            ),
+            hr: () => <hr className="my-3 border-gray-200" />,
+            blockquote: ({ children }) => (
+              <blockquote className="border-l-4 border-[#5624d0] pl-3 my-2 text-gray-600 italic">
+                {children}
+              </blockquote>
+            ),
+            table: ({ children }) => (
+              <div className="overflow-x-auto my-3">
+                <table className="min-w-full border border-gray-200 rounded-lg text-xs">
+                  {children}
+                </table>
+              </div>
+            ),
+            thead: ({ children }) => (
+              <thead className="bg-[#f0ebff]">{children}</thead>
+            ),
+            th: ({ children }) => (
+              <th className="px-3 py-2 text-left font-semibold text-[#5624d0] border-b border-gray-200">
+                {children}
+              </th>
+            ),
+            td: ({ children }) => (
+              <td className="px-3 py-2 border-b border-gray-100">{children}</td>
+            ),
+            code: ({ className, children, ...props }) => {
+              const isInline = !className;
+              if (isInline) {
+                return (
+                  <code
+                    className="bg-[#f0ebff] text-[#5624d0] px-1.5 py-0.5 rounded text-xs font-mono"
+                    {...props}
+                  >
+                    {children}
+                  </code>
+                );
+              }
+              const language = className?.replace("language-", "");
+              return (
+                <CodeBlock
+                  code={String(children).trimEnd()}
+                  language={language}
+                />
+              );
+            },
+            pre: ({ children }) => <>{children}</>,
+          }}
+        >
+          {textContent}
+        </ReactMarkdown>
       </div>
     </div>
   );
