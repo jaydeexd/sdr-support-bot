@@ -154,6 +154,13 @@ export default function ChatInterface() {
     setTimeout(() => setToastVisible(false), 2000);
   };
 
+  const handleNewChat = () => {
+    setMessages([]);
+    setInput("");
+    setPendingImage(null);
+    setError(null);
+  };
+
   const canSend = (input.trim().length > 0 || !!pendingImage) && !isLoading;
 
   return (
@@ -181,7 +188,11 @@ export default function ChatInterface() {
 
       {/* Header */}
       <header className="bg-[#5624d0] text-white px-4 py-3 flex items-center justify-between shadow-md flex-shrink-0">
-        <div className="flex items-center gap-3">
+        <button
+          onClick={handleNewChat}
+          className="flex items-center gap-3 text-left hover:opacity-80 transition-opacity"
+          title="New chat"
+        >
           <div>
             <h1 className="font-semibold text-lg leading-tight">SDR Support Bot</h1>
             <p className="text-purple-200 text-xs">
@@ -191,13 +202,25 @@ export default function ChatInterface() {
           <span className="ml-2 px-2 py-0.5 rounded-full bg-white/20 text-white text-xs font-medium">
             CNX Team
           </span>
-        </div>
-        <button
-          onClick={handleRefreshKnowledge}
-          className="text-xs px-3 py-1.5 rounded-full bg-white/20 hover:bg-white/30 transition-colors font-medium"
-        >
-          Refresh Knowledge
         </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={handleNewChat}
+            className="text-xs px-3 py-1.5 rounded-full bg-white/20 hover:bg-white/30 transition-colors font-medium flex items-center gap-1.5"
+            title="Start a new chat"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+            </svg>
+            New Chat
+          </button>
+          <button
+            onClick={handleRefreshKnowledge}
+            className="text-xs px-3 py-1.5 rounded-full bg-white/20 hover:bg-white/30 transition-colors font-medium"
+          >
+            Refresh Knowledge
+          </button>
+        </div>
       </header>
 
       {/* Messages area */}
