@@ -28,7 +28,7 @@ SEGMENT DEFINITIONS
 | Growth Enterprise (GE) | 1,249–6,000 employees |
 | Commercial | Under 1,249 employees |
 
-HOW TO DETERMINE SEGMENT: Ask the prospect employee count → match to table → route to correct AE pool. If unsure: ping Xavier with copy-paste summary.
+HOW TO DETERMINE SEGMENT: Research the company's headcount independently — check LinkedIn company page, SFDC account record, ZoomInfo, or the company's own website. Do NOT ask the prospect. Match headcount to the segment table → route to correct AE pool. If unsure after research: ping Xavier with copy-paste summary.
 
 CHINA EXCEPTION: Commercial → Kevin/Katie work it. GE or Enterprise → assign to Angie Ching.
 UNDER 21 SEATS: See Team Plan guidance below.
