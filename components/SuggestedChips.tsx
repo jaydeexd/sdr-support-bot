@@ -20,6 +20,7 @@ const CATEGORIES = [
       "Lead from a departed rep — what do I do?",
       "Nurture re-engagement steps",
       "Demo is in 2 hours and AE isn't responding",
+      "My situation isn't in the playbook — what's closest?",
     ],
   },
   {
